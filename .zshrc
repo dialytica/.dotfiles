@@ -57,6 +57,11 @@ if [ -d "$HOME/go/bin" ] ; then
     PATH="$HOME/go/bin:$PATH"
 fi
 
+# check variable $XDG_CONFIG_HOME and set it if empty anyway
+if [ -z "$XDG_CONFIG_HOME" ] ; then
+    XDG_CONFIG_HOME="$HOME/.config"
+fi
+
 # linuxbrew shell env init
 [ -d "/home/linuxbrew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
