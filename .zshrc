@@ -63,12 +63,14 @@ if [ -z "$XDG_CONFIG_HOME" ] ; then
 fi
 
 # linuxbrew shell env init
-[ -d "/home/linuxbrew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [ -d "/home/linuxbrew" ] ; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # kubernetes completion
-command -v kubectl && . <(kubectl completion zsh)
-command -v flux && . <(flux completion zsh)
-command -v helm && . <(helm completion zsh)
+[ -z "$(command -v kubectl)" ] || . <(kubectl completion zsh)
+[ -z "$(command -v flux)" ] || . <(flux completion zsh)
+[ -z "$(command -v helm)" ] || . <(helm completion zsh)
 
 # personal customization
 export VISUAL=nvim
