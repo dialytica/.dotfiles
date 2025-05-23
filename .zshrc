@@ -72,6 +72,9 @@ fi
 [ -z "$(command -v flux)" ] || . <(flux completion zsh)
 [ -z "$(command -v helm)" ] || . <(helm completion zsh)
 
+# k6 completion
+[ -z "$(command -v k6)" ] || . <(k6 completion zsh)
+
 # personal customization
 export VISUAL=nvim
 export EDITOR=nvim
@@ -81,4 +84,15 @@ export GOPATH=~/go
 alias vim=nvim
 alias ls='ls --color'
 alias ll='ls -l'
+alias podman='podman-remote-static-linux_amd64'
 
+# nvm configuration
+[ -z "$(command -v nvm)" ] || nvm install Jod > /dev/null 2>&1
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# docker completion
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
