@@ -1,3 +1,2 @@
-require("llybophi.set")
-require("llybophi.remap")
-require("llybophi.wsl-clipboard")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
