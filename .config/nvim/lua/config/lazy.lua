@@ -20,6 +20,16 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
     { import = "lazyvim.plugins.extras.lang.json" },
+    -- add typescript
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    -- add astro
+    { import = "lazyvim.plugins.extras.lang.astro" },
+    -- add tailwind
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    -- add markdown
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+    -- add go
+    { import = "lazyvim.plugins.extras.lang.go" },
 
     -- import/override with your plugins
     { import = "plugins" },

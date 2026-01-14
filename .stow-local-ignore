@@ -1,4 +1,6 @@
 scripts
+system
 README.md
-.git
-.gitignore
+\.git
+\.gitignore
+.*\.bak
